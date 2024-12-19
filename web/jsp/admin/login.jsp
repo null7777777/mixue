@@ -50,11 +50,11 @@
 			<form action="jsp/admin/LoginServlet" method="post"
 			onsubmit="javascript:return checkForm()">
 			<p>
-				<input type="text" name="userName" id="userName" placeholder="用户名">
+				<input type="text" name="userName" id="userName" placeholder="用户名" value="admin">
 			</p>
 			<p>
 				<input type="password" name="passWord" id="passWord"
-					placeholder="密码">
+					placeholder="密码" value="123456">
 			</p>
 			<p>
 				<input type="submit" id="submit" value="登 录">

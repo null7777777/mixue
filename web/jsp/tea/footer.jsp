@@ -28,8 +28,8 @@
            		 </div>
 				<div class="col-md-2 contact">
 					<div class="col-md-8">
-						<a href="#">本项目归属权由<br>周浩天所有</a>
-						<div class="footer-center-en">Mr.zhou</div>
+						<a href="#">来杯蜜雪吧~<br>LLBno01</a>
+						<div class="footer-center-en">LLB</div>
 					</div>
 					<div class="col-md-4">|</div>
 				</div>

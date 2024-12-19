@@ -51,5 +51,8 @@ public interface TeaDao {
 
 	// 获取指定数量新添加的商品
 	List<Tea> newTeas(int num);
+	
+	// 获取轮播图路径
+	List<String> findRecommendTeaImages();
 
 }

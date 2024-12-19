@@ -125,9 +125,10 @@ public class TeaDaoImpl implements TeaDao {
         // 添加 WHERE 子句
         sqlBuilder.append(" WHERE teaId=?");
         params.add(tea.getTeaId());
-
+        
         // 执行更新操作
         String sql = sqlBuilder.toString();
+        
         
         System.out.println("Executing SQL: " + sql);
         for (int i = 0; i < params.size(); i++) {
@@ -260,5 +261,34 @@ public class TeaDaoImpl implements TeaDao {
 		List<Map<String, Object>> lm = DbUtil.executeQuery(sql);
 		return lm.size() > 0 ? (long) lm.get(0).get("count") : 0;
 	}
+	
+	// 轮播图路径
+	@Override
+    public List<String> findRecommendTeaImages() {
+        String sql = "SELECT i.imgSrc " +
+                     "FROM ((SELECT imgId FROM s_tea " +
+                     "       WHERE recommend = true " +
+                     "       ORDER BY updateTime DESC) " +
+                     "      UNION " +
+                     "      (SELECT imgId FROM s_tea " +
+                     "       WHERE recommend = false " +
+                     "       ORDER BY updateTime DESC " +
+                     "       LIMIT 3) " +
+                     "      LIMIT 3) AS t " +
+                     "JOIN s_uploadimg i ON t.imgId = i.imgId";
+        
+        List<Map<String, Object>> list = null;
+        list = DbUtil.executeQuery(sql);
+        
+        // Extract the imgSrc from the result set
+        List<String> imagePaths = new ArrayList<>();
+        if (list != null && !list.isEmpty()) {
+            for (Map<String, Object> row : list) {
+                imagePaths.add((String) row.get("imgSrc"));
+            }
+        }
+        
+        return imagePaths;
+    }
 
 }

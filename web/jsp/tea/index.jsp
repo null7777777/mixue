@@ -60,16 +60,12 @@
 					</div> -->
 					
 					<div class="carousel-inner" role="listbox">
-					    <div class="item active">
-					        <img src="images/tea/banner1.png" alt="..." style="width: 100%; height: auto;">
-					    </div>
-					    <div class="item">
-					        <img src="images/tea/banner2.png" alt="..." style="width: 100%; height: auto;">
-					    </div>
-					    <div class="item">
-					        <img src="images/tea/banner3.png" alt="..." style="width: 100%; height: auto;">
-					    </div>
-					</div>
+    <c:forEach var="image" items="${sessionScope.imgSrc}" varStatus="status">
+        <div class="item ${status.first ? 'active' : ''}">
+            <img src="${image}" alt="..." style="width: 100%; height: auto;">
+        </div>
+    </c:forEach>
+</div>
 					
 				
 				    <!-- Controls -->
