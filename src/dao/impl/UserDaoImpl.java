@@ -2,6 +2,8 @@ package dao.impl;
 
 import java.util.ArrayList;
 
+
+
 import java.util.List;
 import java.util.Map;
 
@@ -144,5 +146,33 @@ public class UserDaoImpl implements UserDao {
 		}
 		return user1;
 	}
+	
+	@Override
+	public User getUserByName(String userName) {
+		String sql="select * from s_user where userName=? ";
+		List<Map<String, Object>> resultMaps = DbUtil.executeQuery(sql, userName);
+
+		User user1 = null;
+
+		// 检查列表是否为空，以及是否至少有一个元素
+		if (resultMaps != null && !resultMaps.isEmpty()) {
+		    // 获取第一个 Map，因为我们使用了 LIMIT 1，所以最多只有一个元素
+		    Map<String, Object> resultMap = resultMaps.get(0);
+		    
+		    // 假设 User 类有适当的构造函数或 setter 方法来设置属性
+		    user1 = new User();
+		    user1.setUserId((Integer) resultMap.get("userId"));
+		    user1.setUserName((String) resultMap.get("userName"));
+		    user1.setUserPassWord((String) resultMap.get("userPassWord"));
+		    user1.setName((String) resultMap.get("name"));
+		    user1.setSex((String) resultMap.get("sex"));
+		    user1.setAge(((Number) resultMap.get("age")).intValue());
+		    user1.setTell((String) resultMap.get("tell"));
+		    user1.setAddress((String) resultMap.get("address"));
+		    user1.setEnabled((String) resultMap.get("enabled"));
+		}		
+
+		return user1;	}
+	
 
 }

@@ -31,4 +31,6 @@ public interface UserDao {
 	boolean batDelUser(String ids);
 	//登陆
 	User userLogin(User user);
+	// 获取用户信息
+	User getUserByName(String userName);
 }

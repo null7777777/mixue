@@ -26,6 +26,7 @@ public class UserServlet extends HttpServlet {
 	private static final String LOGIN_PATH="jsp/tea/reg.jsp?type=login";
 	private static final String REG_PATH="jsp/tea/reg.jsp?type=reg";
 	private static final String INDEX_PATH="jsp/tea/index.jsp";
+	private static final String USER_PATH="jsp/tea/user.jsp";
 	private static final String LANDING="landing";//前台用户session标识
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -51,9 +52,23 @@ public class UserServlet extends HttpServlet {
 		case "landstatus":
 			landstatus(request,response);
 			break;
+		case "detail":
+			detail(request,response);
+			break;
 		}
 	}
 	
+
+
+
+
+	private void detail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String userName = request.getParameter("username");
+		UserDao ud=new UserDaoImpl();
+		User user = ud.getUserByName(userName);
+		request.getSession().setAttribute("user", user);
+		request.getRequestDispatcher(USER_PATH).forward(request, response);
+	}
 
 
 	//判断用户登陆状态

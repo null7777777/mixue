@@ -17,20 +17,7 @@
         <span> PRODUCTS</span>
     </a>
 
-        <a  href="TeaList?catalogId=2"  class="nav-a ">
-        <span> 下午茶点</span>
-        <span> TEA TIME</span>
-    </a>
 
-        <a  href="TeaList?catalogId=3"  class="nav-a ">
-        <span> 生如夏花 </span>
-        <span> SUMMER FLOWERS</span>
-    </a>
-
-        <a  href="TeaList?catalogId=2"  class="nav-a ">
-        <span> 草莓红颜 </span>
-        <span> STRAWBERRY BEAUTY</span>
-    </a>
 
     </nav> 
      <img class="nav-cut-line" src="images/tea/cut-line.png" alt="">
@@ -63,6 +50,7 @@
 									    ${landing.name} <span class="caret"></span>
 									</a>
 									<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="UserServlet?action=detail&username=${landing.userName}" >个人中心</a></li>
 									    <li><a href="OrderServlet?action=list" >我的订单</a></li>
 									    <li><a style="border-top:1px #ccc solid" href="UserServlet?action=off" onClick="return confirm('确定要退出登录吗？')">退 出 登 录</a></li>
 									</ul>

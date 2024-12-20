@@ -98,26 +98,7 @@
 							</form>
    						</div>
 					</div> 
-					<div class="col-md-10 main-right" style="margin-top:-52px;">
-						<div class="pro col-md-12">
-							<h3>推荐商品</h3>
-							<div id="recTeas" class="pro-list">
-								<ul> 
-								
-									
-								</ul>
-							</div>
-								
-						</div>
-						<div class="pro col-md-12">
-							<h3>新品上市</h3>
-							<div id="newTeas" class="pro-list">
-								<ul > 
-									
-								</ul>
-							</div>
-						</div>
-					</div>
+
 					
 				</div>
 			</div>

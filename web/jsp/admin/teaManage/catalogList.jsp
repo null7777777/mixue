@@ -49,14 +49,7 @@
 		.funbtn a{
 			margin-right:10px;
 		}
-		/* .table #desc{
-			display:inline-block;
-			width:300px;
-			word-break:keep-all;
-    		white-space:nowrap;
-    		overflow:hidden;
-    		text-overflow:ellipsis;
-		} */
+
 	</style>
 
 </head>

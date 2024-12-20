@@ -24,8 +24,7 @@
                 		<a href="#">品牌故事</a> 
 					<div class="footer-center-en">Brand story</div>
                 	</div>
-                	<div class="col-md-4">|</div>
-           		 </div>
+                	<div class="col-md-4">|</div>           		 
 				<div class="col-md-2 contact">
 					<div class="col-md-8">
 						<a href="#">来杯蜜雪吧~<br>LLBno01</a>
@@ -33,7 +32,6 @@
 					</div>
 					<div class="col-md-4">|</div>
 				</div>
-                	<div class="col-md-4">|</div>
            		 </div>
            	</div>
     </footer>

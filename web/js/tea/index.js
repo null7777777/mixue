@@ -26,7 +26,7 @@ function datalist(data){
 		})
 	}
 	
-	//新增加的书
+
 	if(data.newTeas!=null){
 		$.each(data.newTeas,function(i,n){
 			var tag="<li class='col-md-3'><div class='list'>" +
